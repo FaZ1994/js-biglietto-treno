@@ -60,25 +60,33 @@ if (userAge <= 17) {
 
     /* applico sconto del 20% */
 
-    priceTravel = kmToTravel * ( kmPrice - (20 / 100) );
+    priceTravel = kmToTravel * (kmPrice-(kmPrice*0.2)) ;
+    alert('Complimenti, hai diritto al 20% di sconto sul tuo viaggio!');
 
 } else if (userAge >= 65) {
 
     /* applico scondo del 40% */
 
+    priceTravel = kmToTravel * (kmPrice-(kmPrice*0.4));
+    alert('Complimenti, hai diritto al 40% di sconto sul tuo viaggio!');
+
+
+
 } else 
 
 /* prezzo intero */
 
-console.log(userAge);
+alert('nessuno sconto applicabile')
+
 
 
 }
 
 
 
-/* stampo a console il priceTravel in formato EURO */
-console.log(new Intl.NumberFormat('it-IT',{style:'currency', currency: 'EUR'}).format(priceTravel));
+/* stampo a video il priceTravel in formato EURO */
+
+document.getElementById('priceTravel').innerHTML += "€" + priceTravel.toFixed(2);
 
 /*
 
@@ -95,7 +103,5 @@ let pwd_gen = userName + userLastName + userFavoriteColor + '22';
 console.log(pwd_gen);
 
 document.getElementById('pwd_gen').innerHTML += pwd_gen;
-
-}
 
 */
